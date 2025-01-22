@@ -2,6 +2,9 @@
     <persistence-unit name="gestioneEventiPU">
         <!--classi che saranno soggette a persistenza -->
         <class>org.example.Evento</class>
+        <class>org.example.EntityManagerUtil</class>
+        <class>org.example.EventoDaoImpl</class>
+        <class>org.example.Main</class>
 
         <!--configurazione della connessione al db-->
         <properties>
@@ -11,7 +14,7 @@
             <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/gestione_eventi"/>
             <!--user e password -->
             <property name="javax.persistence.jdbc.user" value="postgres" />
-            <property name="javax.persistence.jdbc.password" value="**********" />
+            <property name="javax.persistence.jdbc.password" value="MsfaZn2020!" />
             <!-- dialetto (vocaboli) -->
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
             <!-- Creazione automatica delle tabelle -->

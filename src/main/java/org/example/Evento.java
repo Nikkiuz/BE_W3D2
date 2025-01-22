@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "Evento") // Mappa la classe Persona sulla tabella "studenti"
+@Table(name = "Evento")
 
 public class Evento {
 

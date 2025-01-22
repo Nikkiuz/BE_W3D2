@@ -21,7 +21,7 @@ public class Main {
 			System.out.println("Evento non trovato");
 		}
 
-		eventoDao.deletebById(2L);
+		eventoDao.deletebById(5L);
 
 
 	}
