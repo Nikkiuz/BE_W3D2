@@ -1,23 +1,22 @@
 package org.example;
-import org.example.DAO.EventoDao;
+import org.example.DAO.PersonaDao;
 
 import jakarta.persistence.EntityManager;
-import org.example.DAO.EventoDao;
 
 import java.util.List;
 
-public class EventoDaoImpl implements EventoDao {
+public class PersonaDaoImpl implements PersonaDao {
 
 	@Override
-	public void save(Evento evento) {
+	public void save(Persona persona) {
 		EntityManager entity = EntityManagerUtil.getEntityManager();
 
 		try{
 			entity.getTransaction().begin();
-			entity.persist(evento);
+			entity.persist(persona);
 			entity.getTransaction().commit();
 
-		} catch (Exception e){
+		} catch (Exception e) {
 			if (entity.getTransaction().isActive())
 				entity.getTransaction().rollback();
 		}
@@ -27,13 +26,13 @@ public class EventoDaoImpl implements EventoDao {
 	}
 
 	@Override
-	public Evento findById(Long id) {
+	public Persona findById(long id) {
 		EntityManager entity = EntityManagerUtil.getEntityManager();
 		try{
 			entity.getTransaction().begin();
-			Evento eventoTrovato = entity.find(Evento.class, id);
+			Persona personaTrovata = entity.find(Persona.class, id);
 			entity.getTransaction().commit();
-			return eventoTrovato;
+			return personaTrovata;
 
 		} catch(Exception e) {
 			if(entity.getTransaction().isActive())
@@ -45,17 +44,17 @@ public class EventoDaoImpl implements EventoDao {
 		finally{
 			entity.close();
 		}
+
 	}
 
 	@Override
-	public void deleteById(Long id) {
+	public void deleteById(long id) {
 		EntityManager entity = EntityManagerUtil.getEntityManager();
 		try{
 			entity.getTransaction().begin();
-			Evento evento = findById(id);
-			//Evento evento = entity.find(Evento.class, id);
-			if(evento != null){
-				entity.remove(evento);
+			Persona persona = findById(id);
+			if(persona != null){
+				entity.remove(persona);
 				entity.getTransaction().commit();
 			}
 
@@ -70,15 +69,15 @@ public class EventoDaoImpl implements EventoDao {
 	}
 
 	@Override
-	public List<Evento> findAll() {
+	public List<Persona> findAll() {
 		EntityManager entity = EntityManagerUtil.getEntityManager();
 
-		try{
-			return entity.createQuery("SELECT * FROM evento", Evento.class).getResultList();
+		try {
+			return entity.createQuery("SELECT * FROM evento", Persona.class).getResultList();
 
 		} finally {
 			entity.close();
-
+			;
 		}
 	}
 }

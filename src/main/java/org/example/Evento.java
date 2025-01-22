@@ -28,6 +28,9 @@ public class Evento {
 	@Column(name = "descrizione")
 	private String descrizione;
 
+	private Location location;
+
+
 	public Evento() {
 	}
 

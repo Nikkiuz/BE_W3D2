@@ -1,4 +1,6 @@
-package org.example;
+package org.example.DAO;
+
+import org.example.Evento;
 
 import java.util.List;
 
@@ -8,7 +10,7 @@ public interface EventoDao {
 
 	Evento findById (Long id);
 
-	void deletebById (Long id);
+	void deleteById (Long id);
 
 	List<Evento> findAll();
 }

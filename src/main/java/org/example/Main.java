@@ -1,6 +1,5 @@
 package org.example;
-import jakarta.persistence.EntityManager;
-import jdk.jfr.Event;
+import org.example.DAO.EventoDao;
 
 import java.time.LocalDate;
 
@@ -21,7 +20,7 @@ public class Main {
 			System.out.println("Evento non trovato");
 		}
 
-		eventoDao.deletebById(5L);
+		eventoDao.deleteById(5L);
 
 
 	}
