@@ -1,6 +1,7 @@
 package org.example;
 
 import jakarta.persistence.*;
+
 import java.time.LocalDate;
 
 @Entity
@@ -28,19 +29,31 @@ public class Evento {
 	@Column(name = "descrizione")
 	private String descrizione;
 
+	@ManyToOne
+	@JoinColumn(name = "location_id")
 	private Location location;
 
 
 	public Evento() {
 	}
 
-	public Evento(String titolo, LocalDate data_evento, String tipo_evento, int numero_max_partecipanti,String descrizione) {
+	public Evento(String titolo, LocalDate data_evento, String tipo_evento, int numero_max_partecipanti,
+	              String descrizione) {
 		this.titolo = titolo;
 		this.data_evento = data_evento;
 		this.tipo_evento = tipo_evento;
 		this.numero_max_partecipanti = numero_max_partecipanti;
 		this.descrizione = descrizione;
+	}
 
+	public Evento(String titolo, LocalDate data_evento, String tipo_evento, int numero_max_partecipanti, String descrizione,
+	              Location location) {
+		this.titolo = titolo;
+		this.data_evento = data_evento;
+		this.tipo_evento = tipo_evento;
+		this.numero_max_partecipanti = numero_max_partecipanti;
+		this.descrizione = descrizione;
+		this.location = location;
 	}
 
 	public long getId() {
@@ -90,5 +103,14 @@ public class Evento {
 
 	public void setDescrizione(String descrizione) {
 		this.descrizione = descrizione;
+	}
+
+
+	public Location getLocation() {
+		return location;
+	}
+
+	public void setLocation(Location location) {
+		this.location = location;
 	}
 }

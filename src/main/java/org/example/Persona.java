@@ -19,7 +19,7 @@ public class Persona {
 	private LocalDate data_di_nascita;
 
 	private String sesso;
-
+	
 	private List<Partecipazione> lista_partecipazioni = new ArrayList<>();
 
 	public Persona(){}
@@ -79,11 +79,11 @@ public class Persona {
 		this.sesso = sesso;
 	}
 
-	/*public List<Partecipazione> getLista_partecipazioni() {
+	public List<Partecipazione> getLista_partecipazioni() {
 		return lista_partecipazioni;
 	}
 
 	public void setLista_partecipazioni(List<Partecipazione> lista_partecipazioni) {
 		this.lista_partecipazioni = lista_partecipazioni;
-	}*/
+	}
 }

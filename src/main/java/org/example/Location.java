@@ -2,6 +2,9 @@ package org.example;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Entity
 public class Location {
@@ -12,6 +15,9 @@ public class Location {
 	private String nome;
 
 	private String citta;
+
+	@OneToMany(mappedBy = "location")
+	private List<Evento> listaEventi = new ArrayList<>();
 
 	public Location(){}
 
@@ -38,5 +44,13 @@ public class Location {
 
 	public void setCitta(String citta) {
 		this.citta = citta;
+	}
+
+	public List<Evento> getListaEventi() {
+		return listaEventi;
+	}
+
+	public void setListaEventi(List<Evento> listaEventi) {
+		this.listaEventi = listaEventi;
 	}
 }
