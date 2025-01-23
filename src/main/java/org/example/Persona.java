@@ -20,6 +20,7 @@ public class Persona {
 
 	private String sesso;
 	
+	@OneToMany(mappedBy = "persona")
 	private List<Partecipazione> lista_partecipazioni = new ArrayList<>();
 
 	public Persona(){}
