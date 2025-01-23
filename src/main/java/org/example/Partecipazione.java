@@ -54,4 +54,5 @@ public class Partecipazione {
 	public void setStato(String stato) {
 		this.stato = stato;
 	}
+
 }

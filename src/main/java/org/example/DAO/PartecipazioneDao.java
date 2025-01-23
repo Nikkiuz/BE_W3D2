@@ -6,7 +6,12 @@ import java.util.List;
 
 public interface PartecipazioneDao {
 
-	void save (Partecipazione partecipazione);
+	static void save(Partecipazione partecipazione) {
+
+	}
+
+
+	void save(Partecipazione partecipazione);
 
 	Partecipazione findById (Long id);
 

@@ -25,15 +25,13 @@ public class Persona {
 
 	public Persona(){}
 
-	public Persona(String nome, String cognome, String email, LocalDate data_di_nascita, String sesso,
-	               List<Partecipazione> lista_partecipazioni) {
+	public Persona(String nome, String cognome, String email, LocalDate data_di_nascita, String sesso) {
 		this.id = id;
 		this.nome = nome;
 		this.cognome = cognome;
 		this.email = email;
 		this.data_di_nascita = data_di_nascita;
 		this.sesso = sesso;
-		this.lista_partecipazioni = lista_partecipazioni;
 	}
 
 	public long getId() {
@@ -86,5 +84,9 @@ public class Persona {
 
 	public void setLista_partecipazioni(List<Partecipazione> lista_partecipazioni) {
 		this.lista_partecipazioni = lista_partecipazioni;
+	}
+
+	public void addPartecipazioni(Partecipazione partecipazione){
+		lista_partecipazioni.add(partecipazione);
 	}
 }
