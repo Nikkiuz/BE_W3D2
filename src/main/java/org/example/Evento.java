@@ -33,7 +33,6 @@ public class Evento {
 	@JoinColumn(name = "location_id")
 	private Location location;
 
-
 	public Evento() {
 	}
 

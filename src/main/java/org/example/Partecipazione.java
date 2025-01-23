@@ -8,8 +8,12 @@ public class Partecipazione {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
+	@ManyToOne
+	@JoinColumn(name="persona_id", nullable = false)
 	private Persona persona;
 
+	@ManyToOne
+	@JoinColumn(name = "evento_id")
 	private Evento evento;
 
 	private String stato;
