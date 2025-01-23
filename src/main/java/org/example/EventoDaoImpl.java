@@ -2,7 +2,6 @@ package org.example;
 import org.example.DAO.EventoDao;
 
 import jakarta.persistence.EntityManager;
-import org.example.DAO.EventoDao;
 
 import java.util.List;
 
@@ -52,8 +51,8 @@ public class EventoDaoImpl implements EventoDao {
 		EntityManager entity = EntityManagerUtil.getEntityManager();
 		try{
 			entity.getTransaction().begin();
-			Evento evento = findById(id);
-			//Evento evento = entity.find(Evento.class, id);
+			//Evento evento = findById(id);
+			Evento evento = entity.find(Evento.class, id);
 			if(evento != null){
 				entity.remove(evento);
 				entity.getTransaction().commit();

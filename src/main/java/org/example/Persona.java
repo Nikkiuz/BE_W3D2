@@ -19,7 +19,7 @@ public class Persona {
 	private LocalDate data_di_nascita;
 
 	private String sesso;
-	
+
 	@OneToMany(mappedBy = "persona")
 	private List<Partecipazione> lista_partecipazioni = new ArrayList<>();
 

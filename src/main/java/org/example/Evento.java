@@ -3,6 +3,8 @@ package org.example;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "Evento")
@@ -32,6 +34,9 @@ public class Evento {
 	@ManyToOne
 	@JoinColumn(name = "location_id")
 	private Location location;
+
+	@OneToMany(mappedBy = "evento")
+	private List<Partecipazione> listaPartecipazioni = new ArrayList<>();
 
 	public Evento() {
 	}
